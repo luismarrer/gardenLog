@@ -1,0 +1,485 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    hyphens: auto;
+}
+
+body {
+    font-family: 'Inter', 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    background-color: #F8F5EC;
+    color: #333333;
+    font-synthesis-weight: none;
+}
+
+/* Tipografía */
+h1, h2, h3 {
+    font-family: 'Outfit', 'Manrope', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    color: #6B4E37;
+    text-wrap: balance;
+}
+
+h4, h5, h6 {
+    font-family: 'Outfit', 'Manrope', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    color: #6B4E37;
+}
+
+h1 {
+    font-size: clamp(2rem, 1.2rem + 2.5vw, 3rem);
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
+    margin-bottom: 1.25rem;
+}
+
+h3 {
+    font-size: clamp(1.25rem, 1rem + 0.8vw, 1.5rem);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-wrap: pretty;
+}
+
+/* Enlaces */
+a {
+    color: #4D7B38;
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.15em;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #C93F2D;
+}
+
+/* Header y navegación */
+header {
+    background-color: #4D7B38;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 4rem;
+}
+
+.nav-list li:nth-child(3) {
+    margin: 0 2rem;
+}
+
+.nav-link {
+    font-family: 'Outfit', 'Manrope', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #78A75A;
+    color: #FFFFFF;
+}
+
+.nav-logo a {
+    font-family: 'Outfit', 'Manrope', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    font-family: 'Outfit', 'Manrope', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    border: 2px solid #4D7B38;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #4D7B38;
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #78A75A;
+    color: #FFFFFF;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #4D7B38;
+}
+
+.btn-secondary:hover {
+    background-color: #4D7B38;
+    color: #FFFFFF;
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 0;
+    background-color: #F8F5EC;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-text h1 {
+    color: #6B4E37;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(77, 123, 56, 0.15);
+}
+
+.plant-counter {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: #4D7B38;
+    color: #FFFFFF;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 60px;
+}
+
+.counter-number {
+    font-family: 'Outfit', 'Manrope', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.counter-label {
+    font-family: 'Outfit', 'Manrope', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1;
+}
+
+/* Sección de plantas */
+.plants-section {
+    padding: 4rem 0;
+    background-color: #9EB08C;
+}
+
+.section-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    color: #FFFFFF;
+}
+
+.section-header p {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.plants-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.plant-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.plant-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.plant-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.plant-card:hover .plant-image img {
+    transform: scale(1.05);
+}
+
+.plant-info {
+    padding: 1.5rem;
+}
+
+.plant-info h3 {
+    color: #4D7B38;
+    margin-bottom: 0.75rem;
+}
+
+.plant-info p {
+    color: #333333;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.plant-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.stars {
+    color: #78A75A;
+    font-size: 1.1rem;
+}
+
+.difficulty {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6B4E37;
+    background-color: #F8F5EC;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #4D7B38;
+    color: #FFFFFF;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h4 {
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    color: #FFFFFF;
+    font-size: 0.95rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #78A75A;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 0;
+    border-top: 1px solid #78A75A;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #FFFFFF;
+    font-size: 0.9rem;
+}
+
+/* Media Queries - Responsive Design */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .nav-logo {
+        order: -1;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .plants-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .plants-section {
+        padding: 2rem 0;
+    }
+    
+    .hero-content,
+    .section-header,
+    .plants-grid,
+    .footer-content {
+        padding: 0 1rem;
+    }
+    
+    .plant-card {
+        margin: 0 0.5rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 200px;
+        text-align: center;
+    }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus states para accesibilidad */
+.nav-link:focus,
+.btn:focus {
+    outline: 2px solid #78A75A;
+    outline-offset: 2px;
+}
+
+/* Smooth scrolling para navegación */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
