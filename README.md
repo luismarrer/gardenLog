@@ -163,7 +163,7 @@ Este proyecto es de uso personal y educativo.
 ## TODO
 
 - [ ] Exportar proyecto a Astro
-  - [ ] Crear una rama de desarrollo para trabajar la exportación
+  - [X] Crear una rama de desarrollo para trabajar la exportación
 
 ---
 

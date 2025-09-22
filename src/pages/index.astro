@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro"
+import "@/styles/main.css"
+import { plants } from "@/data/plants.json"
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<body>
+		<header>
+			<nav>
+				<ul class="nav-list">
+					<li><a href="#inicio" class="nav-link">INICIO</a></li>
+					<li><a href="#plantas" class="nav-link">PLANTAS</a></li>
+					<li class="nav-logo">
+						<a href="#inicio">MisPlantas</a>
+					</li>
+					<li>
+						<a href="#contacto" class="nav-link">CONTACTO</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<section id="inicio" class="hero">
+				<div class="hero-content">
+					<div class="hero-text">
+						<h1>Bienvenido a Mi Jardín Personal</h1>
+						<p>
+							Descubre mi colección de plantas cuidadosamente
+							cultivadas. Desde hierbas aromáticas hasta flores
+							exóticas, cada planta tiene su propia historia y
+							características especiales. Acompáñame en este viaje
+							verde.
+						</p>
+						<div class="hero-buttons">
+							<a href="#plantas" class="btn btn-primary"
+								>Explorar</a
+							>
+							<a href="#contacto" class="btn btn-secondary"
+								>Contacto</a
+							>
+						</div>
+					</div>
+					<div class="hero-image">
+						<img
+							src="images/lechuga_del_pais_3_plantas-1.jpeg"
+							alt="Plantas en el jardín"
+						/>
+						<div class="plant-counter">
+							<span class="counter-number">7</span>
+							<span class="counter-label">Plantas</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="plantas" class="plants-section">
+				<div class="section-header">
+					<h2>Mi Colección de Plantas</h2>
+					<p>
+						Cada planta de mi huerto ha sido seleccionada y cuidada
+						con amor. Haz clic en cualquier planta para conocer más
+						sobre sus cuidados y características.
+					</p>
+				</div>
+
+				<div class="plants-grid">
+					{
+						plants.map((plant) => (
+							<article class="plant-card">
+								<div class="plant-image">
+									<img src={plant.image} alt={plant.name} />
+								</div>
+								<div class="plant-info">
+									<h3>{plant.name}</h3>
+									<p>{plant.description}</p>
+									<div class="plant-rating">
+										<span class="stars">★★★★★</span>
+										<span class="difficulty">
+											{plant.care?.difficulty}
+										</span>
+									</div>
+									<a
+										href={`/plants/${plant.slug}`}
+										class="btn btn-secondary"
+									>
+										Ver detalles
+									</a>
+								</div>
+							</article>
+						))
+					}
+				</div>
+			</section>
+		</main>
+
+		<footer id="contacto">
+			<div class="footer-content">
+				<div class="footer-section">
+					<h4>Mis Plantas</h4>
+					<p>
+						Un espacio dedicado a compartir mi pasión por la
+						jardinería y el cultivo de plantas. Cada planta tiene su
+						historia y sus cuidados especiales.
+					</p>
+				</div>
+				<div class="footer-section">
+					<h4>Enlaces Rápidos</h4>
+					<ul>
+						<li><a href="#inicio">Inicio</a></li>
+						<li><a href="#plantas">Plantas</a></li>
+						<li><a href="#contacto">Contacto</a></li>
+					</ul>
+				</div>
+				<div class="footer-section">
+					<h4>Contacto</h4>
+					<p>
+						¿Tienes preguntas sobre el cuidado de plantas o quieres
+						compartir tu experiencia? ¡Me encantaría escucharte!
+					</p>
+					<p>Email: jardin@misplantas.com</p>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<p>&copy; 2024 MisPlantas - Cultivando con amor y dedicación</p>
+			</div>
+		</footer>
+	</body>
+</Layout>
