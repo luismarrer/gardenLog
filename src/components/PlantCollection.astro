@@ -1,0 +1,52 @@
+---
+import { plants } from "@/data/plants.json"
+
+interface Plant {
+    slug: string
+    name: string
+    description: string
+    image: string
+    care?: {
+        difficulty: string
+    }
+}
+---
+
+<section id="plantas" class="plants-section">
+    <div class="section-header">
+        <h2>Mi Colección de Plantas</h2>
+        <p>
+            Cada planta de mi huerto ha sido seleccionada y cuidada con amor.
+            Haz clic en cualquier planta para conocer más sobre sus cuidados y
+            características.
+        </p>
+    </div>
+
+    <div class="plants-grid">
+        {
+            plants.map((plant) => (
+                <article class="plant-card">
+                    <div class="plant-image">
+                        <img src={plant.image} alt={plant.name} />
+                    </div>
+                    <div class="plant-info">
+                        <h3>{plant.name}</h3>
+                        <p>{plant.description}</p>
+                        <div class="plant-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="difficulty">
+                                {plant.care?.difficulty}
+                            </span>
+                        </div>
+                        <a
+                            href={`/plants/${plant.slug}`}
+                            class="btn btn-secondary"
+                        >
+                            Ver detalles
+                        </a>
+                    </div>
+                </article>
+            ))
+        }
+    </div>
+</section>
