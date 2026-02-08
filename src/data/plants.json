@@ -1,0 +1,283 @@
+{
+    "plants": [
+        {
+            "slug": "cilantro",
+            "name": "Cilantro",
+            "description": "Hierba aromática de sabor fresco y cítrico, indispensable en la cocina. Crece rápido y agradece riego constante.",
+            "image": "/images/cilantro-1.jpeg",
+            "gallery": [
+                "/images/cilantro-1.jpeg",
+                "/images/cilantro-2.jpeg",
+                "/images/cilantro-3.jpeg"
+            ],
+            "care": {
+                "watering": "Regular",
+                "light": "Parcial",
+                "temperature": "15-25°C",
+                "difficulty": "Fácil"
+            },
+            "details": {
+                "soil": "Bien drenado, rico en materia orgánica",
+                "ph": "6.0 - 7.0 (neutro)",
+                "spacing": "10-15 cm entre plantas",
+                "depth": "Siembra a 1 cm de profundidad",
+                "season": "Primavera y otoño",
+                "harvest": "30-40 días desde siembra"
+            },
+            "problems": [
+                { "issue": "Espigado rápido", "solution": "Proteger del calor, siembras sucesivas" },
+                { "issue": "Pulgones", "solution": "Jabón potásico o agua a presión" },
+                { "issue": "Hojas amarillas", "solution": "Exceso de agua o falta de nutrientes" },
+                { "issue": "Crecimiento lento", "solution": "Necesita más luz o fertilización" },
+                { "issue": "Sabor amargo", "solution": "Estrés por calor o falta de agua" }
+            ],
+            "tips": [
+                "Mantener suelo húmedo, regar por la mañana",
+                "Cortar hojas externas, dejar centro",
+                "Siembra sucesiva cada 2-3 semanas",
+                "Compost líquido cada 2 semanas",
+                "Refrigerar en agua como flores",
+                "Dejar algunas plantas para coriandro"
+            ]
+        },
+        {
+            "slug": "cosmos-rosita",
+            "name": "Cosmos Rosita",
+            "description": "Flor de pétalos rosados que atrae mariposas y abejas. Alegre y resistente, florece abundantemente durante el verano.",
+            "image": "/images/cosmos_rosita-1.jpeg",
+            "gallery": [
+                "/images/cosmos_rosita-1.jpeg",
+                "/images/cosmos_rosita-2.jpeg"
+            ],
+            "care": {
+                "watering": "Bajo",
+                "light": "Pleno sol",
+                "temperature": "15-28°C",
+                "difficulty": "Fácil"
+            },
+            "details": {
+                "soil": "Bien drenado, tolera suelos pobres",
+                "ph": "6.0 - 8.0 (amplio rango)",
+                "spacing": "30-40 cm entre plantas",
+                "depth": "Siembra superficial, 0.5 cm",
+                "season": "Primavera, después de heladas",
+                "flowering": "60-90 días desde siembra"
+            },
+            "problems": [
+                { "issue": "Pulgones", "solution": "Atraen mariquitas naturalmente" },
+                { "issue": "Exceso de agua", "solution": "Reduce floración, evitar encharcamiento" },
+                { "issue": "Viento fuerte", "solution": "Tutorar plantas altas" },
+                { "issue": "Suelo muy rico", "solution": "Produce más hojas que flores" },
+                { "issue": "Heladas", "solution": "Proteger o resembrar en primavera" }
+            ],
+            "tips": [
+                "Riego moderado, tolera sequía una vez establecida",
+                "Fertilización mínima, prefiere suelos pobres",
+                "Cortar flores marchitas prolonga floración",
+                "Siembra directa mejor que trasplante",
+                "Permitir autosemilla para reproducción natural",
+                "Corte temprano para ramos"
+            ]
+        },
+        {
+            "slug": "lechuga-del-pais",
+            "name": "Lechuga del País / Black Seeded Simpson",
+            "description": "Lechuga de hojas tiernas y sabor suave, perfecta para ensaladas frescas. Crece rápido y se adapta muy bien a cultivos continuos.",
+            "image": "/images/lechuga_del_pais_maceta_azul-1.jpeg",
+            "gallery": [
+                "/images/lechuga_del_pais_maceta_azul-1.jpeg",
+                "/images/lechuga_del_pais_maceta_negra-1.jpeg",
+                "/images/lechuga_del_pais_3_plantas-1.jpeg",
+                "/images/lechuga_del_pais_mas_pequena-1.jpeg"
+            ],
+            "care": {
+                "watering": "Moderado",
+                "light": "Parcial",
+                "temperature": "15-25°C",
+                "difficulty": "Fácil"
+            },
+            "details": {
+                "soil": "Bien drenado, rico en materia orgánica",
+                "ph": "6.0 - 7.0 (ligeramente ácido a neutro)",
+                "spacing": "15-20 cm entre plantas",
+                "depth": "Siembra superficial, 0.5 cm",
+                "season": "Primavera y otoño",
+                "harvest": "45-60 días desde siembra"
+            },
+            "problems": [
+                { "issue": "Pulgones", "solution": "Usar jabón potásico o aceite de neem" },
+                { "issue": "Caracoles", "solution": "Barreras físicas y trampas de cerveza" },
+                { "issue": "Mildiu", "solution": "Evitar riego en hojas, buena ventilación" },
+                { "issue": "Espigado prematuro", "solution": "Proteger del calor excesivo" },
+                { "issue": "Hojas amarillas", "solution": "Revisar drenaje y nutrientes" }
+            ],
+            "tips": [
+                "Mantener suelo húmedo pero no encharcado",
+                "Aplicar compost cada 2-3 semanas",
+                "Cortar hojas externas, dejar centro",
+                "Siembra sucesiva cada 2 semanas para cosecha continua",
+                "Usar malla sombra en verano intenso",
+                "Combina bien con tomates y zanahorias"
+            ]
+        },
+        {
+            "slug": "nepenthes",
+            "name": "Nepenthes",
+            "description": "Planta carnívora de aspecto exótico, con jarritas que atrapan insectos. Además de ornamental, aporta un toque único y sorprendente al jardín.",
+            "image": "/images/nepenthes-1.jpeg",
+            "gallery": [
+                "/images/nepenthes-1.jpeg",
+                "/images/nepenthes-2.jpeg",
+                "/images/nepenthes-3.jpeg",
+                "/images/nepenthes-4.jpeg"
+            ],
+            "care": {
+                "watering": "Alto",
+                "light": "Filtrada",
+                "temperature": "20-30°C",
+                "difficulty": "Difícil"
+            },
+            "details": {
+                "substrate": "Mezcla de turba, perlita y corteza",
+                "ph": "4.0 - 6.0 (ácido)",
+                "humidity": "60-80% humedad relativa",
+                "ventilation": "Buena circulación de aire",
+                "water": "Destilada o de lluvia únicamente",
+                "pot": "Con buen drenaje, colgante ideal"
+            },
+            "problems": [
+                { "issue": "Jarritas secas", "solution": "Baja humedad o agua inadecuada" },
+                { "issue": "Hojas amarillas", "solution": "Exceso de fertilización" },
+                { "issue": "Podredumbre", "solution": "Exceso de agua en sustrato" },
+                { "issue": "Cochinillas", "solution": "Limpiar con alcohol isopropílico" },
+                { "issue": "Crecimiento lento", "solution": "Falta de luz o nutrientes" }
+            ],
+            "tips": [
+                "Mantener sustrato húmedo, no encharcado",
+                "Bandeja con agua o humidificador para mantener humedad",
+                "No necesita alimentación extra, captura insectos",
+                "Podar solo hojas muertas o dañadas",
+                "Trasplantar cada 2-3 años con cuidado",
+                "Interior luminoso sin sol directo"
+            ]
+        },
+        {
+            "slug": "perejil",
+            "name": "Perejil",
+            "description": "Hierba verde de aroma intenso y versátil en la cocina. Fácil de cultivar en macetas o en el huerto, siempre lista para dar sabor.",
+            "image": "/images/perejil-1.jpeg",
+            "gallery": [
+                "/images/perejil-1.jpeg",
+                "/images/perejil-2.jpeg",
+                "/images/perejil-3.jpeg"
+            ],
+            "care": {
+                "watering": "Moderado",
+                "light": "Parcial",
+                "temperature": "10-25°C",
+                "difficulty": "Fácil"
+            },
+            "details": {
+                "soil": "Bien drenado, rico en materia orgánica",
+                "ph": "6.0 - 7.0 (neutro)",
+                "spacing": "15-20 cm entre plantas",
+                "depth": "Siembra a 1-2 cm de profundidad",
+                "season": "Todo el año en climas templados",
+                "harvest": "60-90 días desde siembra"
+            },
+            "problems": [
+                { "issue": "Germinación lenta", "solution": "Remojar semillas 24h antes" },
+                { "issue": "Pulgones", "solution": "Jabón potásico o depredadores naturales" },
+                { "issue": "Hojas amarillas", "solution": "Exceso de agua o falta de nutrientes" },
+                { "issue": "Floración prematura", "solution": "Cortar tallos florales" },
+                { "issue": "Caracoles", "solution": "Barreras y trampas" }
+            ],
+            "tips": [
+                "Riego regular pero sin encharcar",
+                "Cortar tallos externos desde la base",
+                "Aplicar compost cada mes",
+                "Congelar o secar para preservar",
+                "Resembrar cada 6 meses",
+                "Variedades rizado o liso según preferencia"
+            ]
+        },
+        {
+            "slug": "tomate-cherry",
+            "name": "Tomate Cherry",
+            "description": "Tomatitos dulces y jugosos, ideales para picar o dar color a las ensaladas. Planta productiva y fácil de cuidar en macetas o huertos.",
+            "image": "/images/tomate_cherry-1.jpeg",
+            "gallery": [
+                "/images/tomate_cherry-1.jpeg",
+                "/images/tomate_cherry-2.jpeg"
+            ],
+            "care": {
+                "watering": "Regular",
+                "light": "Pleno sol",
+                "temperature": "18-30°C",
+                "difficulty": "Moderado"
+            },
+            "details": {
+                "soil": "Rico en materia orgánica, bien drenado",
+                "ph": "6.0 - 6.8 (ligeramente ácido)",
+                "spacing": "40-50 cm entre plantas",
+                "depth": "Trasplante a 1 cm más profundo",
+                "season": "Primavera, después de heladas",
+                "harvest": "70-80 días desde trasplante"
+            },
+            "problems": [
+                { "issue": "Tizón tardío", "solution": "Fungicida preventivo, evitar humedad" },
+                { "issue": "Mosca blanca", "solution": "Trampas amarillas y jabón potásico" },
+                { "issue": "Agrietamiento", "solution": "Riego constante, evitar sequías" },
+                { "issue": "Podredumbre apical", "solution": "Calcio y riego regular" },
+                { "issue": "Gusano del tomate", "solution": "Revisión manual y Bacillus thuringiensis" }
+            ],
+            "tips": [
+                "Riego profundo y regular, evitar mojar hojas",
+                "Tutorar con cañas o jaulas desde joven",
+                "Eliminar brotes laterales (chupones)",
+                "Aplicar fertilizante rico en potasio durante fructificación",
+                "Usar mulching para mantener humedad y temperatura",
+                "Cosechar cuando están firmes y coloreados"
+            ]
+        },
+        {
+            "slug": "perennial-mix-wildflower",
+            "name": "Perennial Mix Wildflower",
+            "description": "Mezcla floral perenne que llena de color y vida el jardín año tras año. Atrae polinizadores y crea un ambiente natural y vibrante.",
+            "image": "/images/perennial_wildflower_mix-1.jpeg",
+            "gallery": [
+                "/images/perennial_wildflower_mix-1.jpeg",
+                "/images/perennial_wildflower_mix-2.jpeg"
+            ],
+            "care": {
+                "watering": "Bajo",
+                "light": "Pleno sol",
+                "temperature": "Variable",
+                "difficulty": "Moderado"
+            },
+            "details": {
+                "soil": "Bien drenado, tolera suelos pobres",
+                "ph": "6.0 - 8.0 (amplio rango)",
+                "spacing": "Siembra al voleo, 2-5g/m²",
+                "depth": "Siembra superficial, rastrillado ligero",
+                "season": "Primavera u otoño",
+                "flowering": "Desde segundo año, continua"
+            },
+            "problems": [
+                { "issue": "Competencia de malezas", "solution": "Preparar bien el terreno" },
+                { "issue": "Germinación irregular", "solution": "Diferentes especies, normal" },
+                { "issue": "Primer año sin flores", "solution": "Establecimiento de raíces" },
+                { "issue": "Zonas peladas", "solution": "Resembrar en primavera" },
+                { "issue": "Invasión de gramíneas", "solution": "Control selectivo" }
+            ],
+            "tips": [
+                "Eliminar malezas antes de sembrar",
+                "Mantener húmedo hasta germinación",
+                "Hacer corte anual a finales de invierno",
+                "Permitir autosiembra para reproducción natural",
+                "La mezcla atrae diferentes polinizadores",
+                "Mejor aspecto desde el segundo año"
+            ]
+        }
+    ]
+}
