@@ -4,134 +4,148 @@ import "@/styles/main.css"
 import "@/styles/plant-detail.css"
 import plantsData from "@/data/plants.json"
 
+const detailLabels: Record<string, string> = {
+    soil: "Suelo",
+    substrate: "Sustrato",
+    ph: "pH",
+    spacing: "Espacio",
+    depth: "Profundidad",
+    season: "Época",
+    harvest: "Cosecha",
+    flowering: "Floración",
+    humidity: "Humedad",
+    ventilation: "Ventilación",
+    water: "Agua",
+    pot: "Maceta",
+}
+
 export async function getStaticPaths() {
     return plantsData.plants.map((plant) => ({
         params: { slug: plant.slug },
     }))
 }
 
-// Obtenemos el slug desde la URL
 const { slug } = Astro.params
-
-// Buscamos la planta en el JSON
-const plant = plantsData.plants.find((p) => p.slug === slug)
+const plant = plantsData.plants.find((item) => item.slug === slug)
 
 if (!plant) {
     throw new Error(`Planta con slug "${slug}" no encontrada`)
 }
+
+const careItems = [
+    { label: "Riego", value: plant.care.watering, marker: "≈" },
+    { label: "Luz", value: plant.care.light, marker: "☼" },
+    { label: "Temperatura", value: plant.care.temperature, marker: "⌁" },
+    { label: "Dificultad", value: plant.care.difficulty, marker: "↗" },
+]
+
+const detailEntries = Object.entries(plant.details)
 ---
 
-<Layout title={`${plant.name} - MisPlantas`}>
-    <!-- Volver -->
+<Layout title={`${plant.name} — Mis Plantas`}>
     <div class="back-navigation">
-        <a href="/" class="back-link">← Volver a Mis Plantas</a>
+        <a href="/#plantas" class="back-link">← Volver a la colección</a>
     </div>
 
-    <main>
-        <!-- Hero -->
-        <section class="plant-hero">
-            <div class="plant-hero-content">
-                <div class="plant-hero-image">
-                    <img
-                        src={plant.image}
-                        alt={plant.name}
-                        class="rounded-xl shadow-md"
-                    />
-                </div>
-                <div class="plant-hero-info">
-                    <h1 class="text-3xl font-bold mb-3">{plant.name}</h1>
-                    <p class="plant-description">{plant.description}</p>
+    <section class="plant-hero" aria-labelledby="plant-title">
+        <div class="plant-hero-content">
+            <figure class="plant-hero-image">
+                <img
+                    src={plant.image}
+                    alt={plant.name}
+                    fetchpriority="high"
+                />
+                <figcaption>Ficha de la colección</figcaption>
+            </figure>
 
-                    <div class="care-basics">
-                        <h3 class="font-semibold text-lg mb-2">
-                            Cuidados Básicos
-                        </h3>
-                        <ul class="care-grid">
-                            <li>💧 Riego: {plant.care.watering}</li>
-                            <li>☀️ Luz: {plant.care.light}</li>
-                            <li>
-                                🌡️ Temperatura: {plant.care.temperature}
-                            </li>
-                            <li>⭐ Dificultad: {plant.care.difficulty}</li>
-                        </ul>
+            <div class="plant-hero-info">
+                <p class="eyebrow"><span aria-hidden="true"></span>{plant.care.difficulty}</p>
+                <h1 id="plant-title">{plant.name}</h1>
+                <p class="plant-description">{plant.description}</p>
+
+                <section class="care-basics" aria-labelledby="care-title">
+                    <div class="care-heading">
+                        <p>Ritmo de cuidado</p>
+                        <h2 id="care-title">Lo esencial, de un vistazo.</h2>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Detalles -->
-        <section class="plant-details">
-            <div class="details-grid">
-                <article class="detail-card">
-                    <h2 class="text-2xl font-semibold mb-4">
-                        Condiciones de Cultivo
-                    </h2>
-                    <ul class="list-disc ml-6 space-y-1 text-gray-700">
-                        <li>
-                            <strong>Suelo:</strong>
-                            {plant.details.soil}
-                        </li>
-                        <li><strong>pH:</strong> {plant.details.ph}</li>
-                        <li>
-                            <strong>Espacio:</strong>
-                            {plant.details.spacing}
-                        </li>
-                        <li>
-                            <strong>Profundidad:</strong>
-                            {plant.details.depth}
-                        </li>
-                        <li>
-                            <strong>Época:</strong>
-                            {plant.details.season}
-                        </li>
-                        <li>
-                            <strong>Cosecha:</strong>
-                            {plant.details.harvest}
-                        </li>
-                    </ul>
-                </article>
-
-                <!-- Problemas comunes -->
-                <article class="detail-card">
-                    <h2 class="text-2xl font-semibold mb-4">
-                        Problemas Comunes
-                    </h2>
-                    <ul class="list-disc ml-6 space-y-1 text-gray-700">
+                    <dl class="care-grid">
                         {
-                            plant.problems.map((problem) => (
-                                <li>
-                                    <strong>{problem.issue}:</strong>{" "}
-                                    {problem.solution}
-                                </li>
+                            careItems.map((item) => (
+                                <div class="care-item">
+                                    <dt><span aria-hidden="true">{item.marker}</span>{item.label}</dt>
+                                    <dd>{item.value}</dd>
+                                </div>
                             ))
                         }
-                    </ul>
-                </article>
-
-                <!-- Consejos -->
-                <article class="detail-card">
-                    <h2 class="text-2xl font-semibold mb-4">
-                        Consejos de Cuidado
-                    </h2>
-                    <ul class="list-disc ml-6 space-y-1 text-gray-700">
-                        {plant.tips.map((tip) => <li>{tip}</li>)}
-                    </ul>
-                </article>
+                    </dl>
+                </section>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Galería -->
-        <section class="plant-gallery">
-            <h2 class="text-2xl font-semibold mb-4">Galería</h2>
-            <div class="gallery-grid">
-                {
-                    plant.gallery.map((img) => (
-                        <div class="gallery-item">
-                            <img src={img} alt={plant.name} />
-                        </div>
-                    ))
-                }
-            </div>
-        </section>
-    </main>
+    <section class="plant-details" aria-labelledby="details-title">
+        <div class="detail-section-heading">
+            <p class="eyebrow"><span aria-hidden="true"></span>Notas de cultivo</p>
+            <h2 id="details-title">La ficha completa.</h2>
+        </div>
+
+        <div class="details-grid">
+            <article class="detail-card detail-card--conditions">
+                <h3>Condiciones</h3>
+                <dl class="conditions-list">
+                    {
+                        detailEntries.map(([key, value]) => (
+                            <div>
+                                <dt>{detailLabels[key] ?? key}</dt>
+                                <dd>{value}</dd>
+                            </div>
+                        ))
+                    }
+                </dl>
+            </article>
+
+            <article class="detail-card detail-card--problems">
+                <h3>Si notas…</h3>
+                <ul class="problem-list">
+                    {
+                        plant.problems.map((problem) => (
+                            <li>
+                                <strong>{problem.issue}</strong>
+                                <span>{problem.solution}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </article>
+
+            <article class="detail-card detail-card--tips">
+                <h3>Rutina</h3>
+                <ol class="routine-list">
+                    {plant.tips.map((tip) => <li>{tip}</li>)}
+                </ol>
+            </article>
+        </div>
+    </section>
+
+    <section class="plant-gallery" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+            <p class="eyebrow"><span aria-hidden="true"></span>Registro visual</p>
+            <h2 id="gallery-title">La planta, vista de cerca.</h2>
+        </div>
+        <div class="gallery-grid">
+            {
+                plant.gallery.map((img, index) => (
+                    <figure class={`gallery-item gallery-item--${index + 1}`}>
+                        <img
+                            src={img}
+                            alt={`Vista ${index + 1} de ${plant.name}`}
+                            loading="lazy"
+                            decoding="async"
+                        />
+                        <figcaption>{String(index + 1).padStart(2, "0")} / {String(plant.gallery.length).padStart(2, "0")}</figcaption>
+                    </figure>
+                ))
+            }
+        </div>
+    </section>
 </Layout>

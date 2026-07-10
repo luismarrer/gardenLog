@@ -6,45 +6,66 @@ interface Plant {
     name: string
     description: string
     image: string
-    care?: {
+    care: {
+        watering: string
+        light: string
         difficulty: string
     }
 }
 ---
 
-<section id="plantas" class="plants-section">
+<section id="plantas" class="plants-section" aria-labelledby="plants-title">
     <div class="section-header">
-        <h2>Mi Colección de Plantas</h2>
-        <p>
-            Cada planta de mi huerto ha sido seleccionada y cuidada con amor.
-            Haz clic en cualquier planta para conocer más sobre sus cuidados y
-            características.
-        </p>
+        <p class="eyebrow"><span aria-hidden="true"></span>Archivo vivo</p>
+        <div class="collection-heading">
+            <h2 id="plants-title">Cada planta tiene <em>su propio ritmo.</em></h2>
+            <p>
+                No es un inventario perfecto. Es una colección en marcha: lo que
+                florece, lo que pide sombra y lo que todavía estoy aprendiendo.
+            </p>
+        </div>
+        <p class="collection-count"><span>{String(plants.length).padStart(2, "0")}</span> fichas de cultivo</p>
     </div>
 
     <div class="plants-grid">
         {
-            plants.map((plant) => (
-                <article class="plant-card">
-                    <div class="plant-image">
-                        <img src={plant.image} alt={plant.name} />
-                    </div>
-                    <div class="plant-info">
-                        <h3>{plant.name}</h3>
-                        <p>{plant.description}</p>
-                        <div class="plant-rating">
-                            <span class="stars">★★★★★</span>
-                            <span class="difficulty">
-                                {plant.care?.difficulty}
+            plants.map((plant: Plant, index) => (
+                <article class={`plant-card plant-card--${index + 1}`}>
+                    <a
+                        href={`/plants/${plant.slug}`}
+                        class="plant-card-link"
+                        aria-label={`Ver ficha de ${plant.name}`}
+                    >
+                        <div class="plant-image">
+                            <img
+                                src={plant.image}
+                                alt={plant.name}
+                                loading={index === 0 ? "eager" : "lazy"}
+                                decoding="async"
+                            />
+                            <span class="plant-index" aria-hidden="true">
+                                {String(index + 1).padStart(2, "0")}
                             </span>
                         </div>
-                        <a
-                            href={`/plants/${plant.slug}`}
-                            class="btn btn-secondary"
-                        >
-                            Ver detalles
-                        </a>
-                    </div>
+                        <div class="plant-info">
+                            <div class="plant-card-top">
+                                <span class="difficulty">{plant.care.difficulty}</span>
+                                <span class="card-arrow" aria-hidden="true">↗</span>
+                            </div>
+                            <h3>{plant.name}</h3>
+                            <p>{plant.description}</p>
+                            <dl class="plant-meta">
+                                <div>
+                                    <dt>Riego</dt>
+                                    <dd>{plant.care.watering}</dd>
+                                </div>
+                                <div>
+                                    <dt>Luz</dt>
+                                    <dd>{plant.care.light}</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </a>
                 </article>
             ))
         }

@@ -1,31 +1,36 @@
 ---
-
+const plantCount = 7
 ---
 
-<section id="inicio" class="hero">
+<section id="inicio" class="hero" aria-labelledby="hero-title">
     <div class="hero-content">
         <div class="hero-text">
-            <h1>Bienvenido a Mi Jardín Personal</h1>
-            <p>
-                Descubre mi colección de plantas cuidadosamente cultivadas.
-                Desde hierbas aromáticas hasta flores exóticas, cada planta
-                tiene su propia historia y características especiales.
-                Acompáñame en este viaje verde.
+            <p class="eyebrow"><span aria-hidden="true"></span>Bitácora doméstica</p>
+            <h1 id="hero-title">El jardín deja pistas.<br /><em>Aquí las guardo.</em></h1>
+            <p class="hero-lead">
+                Una colección de hierbas, flores y plantas impredecibles: fotos
+                reales, cuidados y lo que voy aprendiendo mientras crecen.
             </p>
             <div class="hero-buttons">
-                <a href="#plantas" class="btn btn-primary">Explorar</a>
-                <a href="#contacto" class="btn btn-secondary">Contacto</a>
+                <a href="#plantas" class="btn btn-primary">Abrir colección <span aria-hidden="true">↓</span></a>
+                <a href="#contacto" class="btn btn-quiet">Escribir</a>
             </div>
+            <p class="hero-footnote">Sin atajos: observar, regar, repetir.</p>
         </div>
-        <div class="hero-image">
-            <img
-                src="images/lechuga_del_pais_3_plantas-1.jpeg"
-                alt="Plantas en el jardín"
-            />
-            <div class="plant-counter">
-                <span class="counter-number">7</span>
-                <span class="counter-label">Plantas</span>
+
+        <figure class="hero-image">
+            <div class="hero-image-frame">
+                <img
+                    src="/images/lechuga_del_pais_3_plantas-1.jpeg"
+                    alt="Tres plantas de lechuga del país creciendo juntas"
+                    fetchpriority="high"
+                />
             </div>
-        </div>
+            <figcaption>Lechuga del país · creciendo en compañía</figcaption>
+            <div class="plant-counter" aria-label={`${plantCount} plantas registradas`}>
+                <span class="counter-number">0{plantCount}</span>
+                <span class="counter-label">especies<br />registradas</span>
+            </div>
+        </figure>
     </div>
 </section>
