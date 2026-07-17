@@ -81,6 +81,7 @@ The site will be available at `http://localhost:4321`.
 ## 📝 Todo
 
 - [ ] Add more plants
+- [ ] Add live sensor telemetry following the [implementation roadmap](./ROADMAP.md)
 
 ## 🤝 Contributing
 
